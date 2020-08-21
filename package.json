@@ -1,0 +1,29 @@
+{
+  "name": "snackxpress-angularjs-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/angular": "^1.7.2",
+    "@types/angular-route": "^1.7.1",
+    "@types/angular-ui-router": "^1.1.40",
+    "ts-loader": "^8.0.2",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "angular": "^1.8.0",
+    "angular-route": "^1.8.0",
+    "angular-ui-router": "^1.0.28",
+    "html-loader": "^1.2.1"
+  }
+}
