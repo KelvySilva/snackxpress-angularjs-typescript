@@ -6,8 +6,14 @@ class ProductComponent implements IComponentOptions {
 
     controller: any;
     templateUrl:any;
+    bindings: any;
 
     constructor() {
+        this.bindings = {
+            textBinding: '@',
+            dataBinding: '<',
+            functionBinding: '&'
+        };
         this.controller = ProductControler;
         this.templateUrl = require('../../pages/product/product.html');
     }

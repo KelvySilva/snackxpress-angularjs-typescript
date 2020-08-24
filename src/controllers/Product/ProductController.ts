@@ -1,11 +1,12 @@
 import { IController } from 'angular';
 
+import { Product } from '../../models/Product';
+
 class ProductControler implements IController {
-    private http: ng.IHttpService;
-    public constructor($http: ng.IHttpService) {
+    
+    public constructor() {
         console.log("Alou Product");
-        this.http = $http;        
-    }    
+    }
 
     public getData() : any {
         return {
@@ -14,7 +15,7 @@ class ProductControler implements IController {
     }
 
     $onInit() {
-        this.getData();
+        console.log("onInit");
     }
 }
 

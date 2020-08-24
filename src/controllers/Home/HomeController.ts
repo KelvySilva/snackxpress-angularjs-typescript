@@ -1,24 +1,22 @@
 
 import { IController } from 'angular';
+import HomeComponent from '../../components/Home/HomeComponent';
 
 class HomeController implements IController {
 
-    private http :ng.IHttpService;
-
-    public constructor($http:ng.IHttpService) {
-        console.log("Alou home");
-        this.http = $http;
-        
+    public constructor() {
+        console.log("Alou home");        
     }
 
     public getData() : any {
         return {
             message : "Hello Home"
+            
         }
     }
 
     $onInit() {
-        this.getData();
+        console.log("onInit");
     }
     
 }
