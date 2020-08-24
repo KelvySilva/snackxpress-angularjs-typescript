@@ -1,8 +1,8 @@
-import { IController } from 'angular';
+import { IController, IComponentController } from 'angular';
 
 import { Product } from '../../models/Product';
 
-class ProductControler implements IController {
+class ProductControler implements IComponentController {
     
     public constructor() {
         console.log("Alou Product");

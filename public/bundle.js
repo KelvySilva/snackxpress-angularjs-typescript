@@ -1260,89 +1260,19 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var angular_ui_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-ui-router */ \"./node_modules/angular-ui-router/lib-esm/index.js\");\n/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes */ \"./src/routes.ts\");\n\r\n// import ngRoute from 'angular-route';\r\n\r\n// import IController  from 'angular';\r\n\r\nconst app = Object(angular__WEBPACK_IMPORTED_MODULE_0__[\"module\"])('snackxpress', [angular_ui_router__WEBPACK_IMPORTED_MODULE_1__[\"default\"]]);\r\napp.config(_routes__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (app);\r\n\n\n//# sourceURL=webpack:///./src/app.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var angular_ui_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-ui-router */ \"./node_modules/angular-ui-router/lib-esm/index.js\");\n/* harmony import */ var _config_configuration__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/configuration */ \"./src/config/configuration.ts\");\n\n// import ngRoute from 'angular-route';\n\n// import IController  from 'angular';\n\n// import ProductControler from './controllers/Product/ProductController';\n// import HomeController from './controllers/Home/HomeController';\n// const productController: ProductControler = new ProductControler();\n// const homeController: HomeController = new HomeController();\nconst app = Object(angular__WEBPACK_IMPORTED_MODULE_0__[\"module\"])('snackxpress', [angular_ui_router__WEBPACK_IMPORTED_MODULE_1__[\"default\"]]);\napp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {\n        return new _config_configuration__WEBPACK_IMPORTED_MODULE_2__[\"default\"]($stateProvider, $urlRouterProvider, $locationProvider);\n    }]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (app);\n\n\n//# sourceURL=webpack:///./src/app.ts?");
 
 /***/ }),
 
-/***/ "./src/components/Home/HomeComponent.ts":
-/*!**********************************************!*\
-  !*** ./src/components/Home/HomeComponent.ts ***!
-  \**********************************************/
+/***/ "./src/config/configuration.ts":
+/*!*************************************!*\
+  !*** ./src/config/configuration.ts ***!
+  \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_Home_HomeController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../controllers/Home/HomeController */ \"./src/controllers/Home/HomeController.ts\");\n\r\nclass HomeComponent {\r\n    constructor() {\r\n        this.bindings = {\r\n            textBinding: '@',\r\n            dataBinding: '<',\r\n            functionBinding: '&'\r\n        };\r\n        this.controller = _controllers_Home_HomeController__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\n        this.templateUrl = __webpack_require__(/*! ../../pages/home/home.html */ \"./src/pages/home/home.html\");\r\n    }\r\n}\r\nHomeComponent.NAME = \"Home\";\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (HomeComponent);\r\n\n\n//# sourceURL=webpack:///./src/components/Home/HomeComponent.ts?");
-
-/***/ }),
-
-/***/ "./src/components/Product/ProductComponent.ts":
-/*!****************************************************!*\
-  !*** ./src/components/Product/ProductComponent.ts ***!
-  \****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_Product_ProductController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../controllers/Product/ProductController */ \"./src/controllers/Product/ProductController.ts\");\n\r\nclass ProductComponent {\r\n    constructor() {\r\n        this.bindings = {\r\n            textBinding: '@',\r\n            dataBinding: '<',\r\n            functionBinding: '&'\r\n        };\r\n        this.controller = _controllers_Product_ProductController__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\n        this.templateUrl = __webpack_require__(/*! ../../pages/product/product.html */ \"./src/pages/product/product.html\");\r\n    }\r\n}\r\nProductComponent.NAME = \"Product\";\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (ProductComponent);\r\n\n\n//# sourceURL=webpack:///./src/components/Product/ProductComponent.ts?");
-
-/***/ }),
-
-/***/ "./src/controllers/Home/HomeController.ts":
-/*!************************************************!*\
-  !*** ./src/controllers/Home/HomeController.ts ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass HomeController {\r\n    constructor() {\r\n        console.log(\"Alou home\");\r\n    }\r\n    getData() {\r\n        return {\r\n            message: \"Hello Home\"\r\n        };\r\n    }\r\n    $onInit() {\r\n        console.log(\"onInit\");\r\n    }\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (HomeController);\r\n\n\n//# sourceURL=webpack:///./src/controllers/Home/HomeController.ts?");
-
-/***/ }),
-
-/***/ "./src/controllers/Product/ProductController.ts":
-/*!******************************************************!*\
-  !*** ./src/controllers/Product/ProductController.ts ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass ProductControler {\r\n    constructor() {\r\n        console.log(\"Alou Product\");\r\n    }\r\n    getData() {\r\n        return {\r\n            message: \"hello product\"\r\n        };\r\n    }\r\n    $onInit() {\r\n        console.log(\"onInit\");\r\n    }\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (ProductControler);\r\n\n\n//# sourceURL=webpack:///./src/controllers/Product/ProductController.ts?");
-
-/***/ }),
-
-/***/ "./src/pages/home/home.html":
-/*!**********************************!*\
-  !*** ./src/pages/home/home.html ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// Module\nvar code = \"\\r\\n<!-- <div ng-controller=\\\"HomeController\\\">\\r\\n      \\r\\n    <a href=\\\"#!/product\\\">Product</a>\\r\\n    \\r\\n</div> -->\\r\\n\\r\\n<div>\\r\\n    Home  \\r\\n    <a href=\\\"#!/product\\\">Product</a>\\r\\n    \\r\\n</div>\\r\\n\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack:///./src/pages/home/home.html?");
-
-/***/ }),
-
-/***/ "./src/pages/product/product.html":
-/*!****************************************!*\
-  !*** ./src/pages/product/product.html ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// Module\nvar code = \"\\r\\n<!-- <div ng-controller=\\\"ProductController\\\">\\r\\n    <h1>alooou</h1>\\r\\n    <a href=\\\"#!/home\\\">Home</a>    \\r\\n</div> -->\\r\\n<div>\\r\\n    Product\\r\\n    <a href=\\\"#!/home\\\">Home</a>    \\r\\n</div>\\r\\n\";\n// Exports\nmodule.exports = code;\n\n//# sourceURL=webpack:///./src/pages/product/product.html?");
-
-/***/ }),
-
-/***/ "./src/routes.ts":
-/*!***********************!*\
-  !*** ./src/routes.ts ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_Home_HomeComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Home/HomeComponent */ \"./src/components/Home/HomeComponent.ts\");\n/* harmony import */ var _components_Product_ProductComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Product/ProductComponent */ \"./src/components/Product/ProductComponent.ts\");\n\r\n\r\n// configRoutes.$inject = [\"$routeProvider\"];\r\n// function configRoutes($routeProvider: ng.route.IRouteProvider)  {\r\n//     console.log(\"Router...\");\r\n//     $routeProvider\r\n//     .when(\"/\", { \r\n//         redirectTo: \"/home\"\r\n//     })\r\n//     .when(\"/home\", { \r\n//         // controller: HomeController, \r\n//         templateUrl: \"../src/pages/home/home.html\"\r\n//         // controllerAs: \"playList\" \r\n//     })\r\n//     .when(\"/products\", {\r\n//         // controller: ProductControler,\r\n//         templateUrl: \"../src/pages/product/product.html\"\r\n//     });\r\n//     $routeProvider.otherwise({ redirectTo: \"/home\" });\r\n// }\r\nconfigRoutes.$inject = [\"$stateProvider\", \"$urlRouterProvider\"];\r\nfunction configRoutes($stateProvider, $urlRouterProvider) {\r\n    console.log(\"Router\");\r\n    $stateProvider\r\n        .state(\"/\", {\r\n        url: \"/\",\r\n        name: _components_Home_HomeComponent__WEBPACK_IMPORTED_MODULE_0__[\"default\"].NAME,\r\n        component: \"HomeComponent\"\r\n        // templateUrl: \"../src/pages/home/home.html\"\r\n        // controllerAs: \"playList\" \r\n    })\r\n        .state(\"Home\", {\r\n        url: \"/home\",\r\n        name: _components_Home_HomeComponent__WEBPACK_IMPORTED_MODULE_0__[\"default\"].NAME,\r\n        component: \"HomeComponent\"\r\n        // templateUrl: \"../src/pages/home/home.html\"\r\n        // controllerAs: \"playList\" \r\n    })\r\n        .state(\"Products\", {\r\n        url: \"/products\",\r\n        name: _components_Product_ProductComponent__WEBPACK_IMPORTED_MODULE_1__[\"default\"].NAME,\r\n        component: \"ProductComponent\"\r\n        // templateUrl: \"../src/pages/product/product.html\"\r\n    });\r\n    $urlRouterProvider.otherwise(\"/home\");\r\n}\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (configRoutes);\r\n\n\n//# sourceURL=webpack:///./src/routes.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\nclass Configuration {\n    constructor($stateProvider, $urlRouterProvider, $locationProvider) {\n        this.$stateProvider = $stateProvider;\n        this.$urlRouterProvider = $urlRouterProvider;\n        this.$locationProvider = $locationProvider;\n        this.init();\n        console.log(\"Router\");\n    }\n    init() {\n        this.$stateProvider.state(\"Home\", Configuration.homeState());\n        this.$stateProvider.state(\"Products\", Configuration.productsState());\n        this.$urlRouterProvider.otherwise(\"/home\");\n    }\n    static homeState() {\n        return {\n            url: \"/home\",\n            templateUrl: \"../src/pages/home/home.html\"\n        };\n    }\n    static productsState() {\n        return {\n            url: \"/products\",\n            templateUrl: \"../src/pages/product/product.html\"\n        };\n    }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Configuration);\n\n\n//# sourceURL=webpack:///./src/config/configuration.ts?");
 
 /***/ })
 
