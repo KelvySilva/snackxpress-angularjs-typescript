@@ -1,13 +1,16 @@
 import HomeController from "../../controllers/Home/HomeController";
-import { IComponentOptions } from "angular";
+import { IComponentOptions, IScope } from "angular";
 
 class HomeComponent implements IComponentOptions {
-    // static NAME:string = "HomeComponent";    
+
+    static NAME:string = "homeComponent";    
+
     controller: any;
     transclude: any;
     templateUrl: any;
     bindings: any;
     template: any;
+    controllerAs: any;
 
     constructor() {
         this.bindings = {
@@ -15,12 +18,16 @@ class HomeComponent implements IComponentOptions {
             dataBinding: '<',
             functionBinding: '&'
         };
-        // this.transclude = true;
-        // this.controller= HomeController;
-        this.controller= () => {
-            console.log("HomeComponentController")
+        this.transclude = true;
+        this.controller= class HomeControllerComponent {
+
+            public compNome:string = "HomeComp";
+            constructor(protected $scope: IScope) {
+                
+            }
         };
-        this.templateUrl = "../../pages/home/homeComponent.html";
+        this.controllerAs= "homeComp",       
+        this.templateUrl = "../../src/pages/home/homeComponent.html";
     }
 }
 

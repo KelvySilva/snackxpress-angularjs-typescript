@@ -2,6 +2,10 @@ table tr td,table tr th {
     font-size: .85rem;
 }
 
+.list-group-item.active {
+  color: #777;
+}
+
 .off-in-5 {
 
   transition: 5000 ease-in-out;

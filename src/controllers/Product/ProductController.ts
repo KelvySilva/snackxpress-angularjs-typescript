@@ -1,21 +1,22 @@
-import { IController, IComponentController } from 'angular';
-
+import { IController, IScope, IHttpResponse } from 'angular';
+import ProductService from '../../services/Product/ProductService';
 import { Product } from '../../models/Product';
 
-class ProductControler implements IComponentController {
+class ProductControler implements IController {
     
-    public constructor() {
-        console.log("Alou Product");
-    }
+    static $inject = ['$scope', 'ProductService'];
+    
+    public title:string = "Produtos"
+    public products: Product[] = [];
 
-    public getData() : any {
-        return {
-            message:"hello product"
-        }
-    }
+    public constructor(protected $scope: IScope, protected service: ProductService) {} 
 
     $onInit() {
-        console.log("onInit");
+        this.service.listAll().then(res => {            
+            this.products = res.data;
+        }).catch(err => {
+            console.log(err);            
+        });      
     }
 }
 

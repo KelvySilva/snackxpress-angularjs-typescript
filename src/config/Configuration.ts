@@ -1,11 +1,11 @@
 
 import { ILocationProvider } from "angular";
 import { IStateProvider, IUrlRouterProvider, IState } from "angular-ui-router";
-import HomeComponent from "../components/Home/HomeComponent";
-import ProductComponent from "../components/Product/ProductComponent";
 import HomeController from "../controllers/Home/HomeController";
+import ProductControler from "../controllers/Product/ProductController";
 
 class Configuration {
+    
     constructor(
         private $stateProvider: IStateProvider,
         private $urlRouterProvider: IUrlRouterProvider,
@@ -27,6 +27,7 @@ class Configuration {
             url: "/home",
             templateUrl:"../src/pages/home/home.html",
             controller:HomeController,
+            controllerAs: 'view'
             // component: "HomeComponent"
         };
     }
@@ -35,7 +36,8 @@ class Configuration {
         return {
             url:"/products",
             templateUrl: "../src/pages/product/product.html",
-            controller: HomeController,
+            controller: ProductControler,
+            controllerAs: 'view'
             // component: "ProductComponent",           
         };
     }
@@ -43,7 +45,7 @@ class Configuration {
         return {
             url:"/clients",
             templateUrl: "../src/pages/clients/clients.html",
-            controller: HomeController,
+            controllerAs: 'view'
             // component: "ProductComponent",           
         };
     }

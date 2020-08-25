@@ -1,15 +1,15 @@
 
-import { IComponentController, IScope } from 'angular';
+import { IScope, IController } from 'angular';
 
 
-class HomeController implements IComponentController {
+class HomeController implements IController {
 
-    private scope:IScope;
-    public title: string;
-
-    public constructor($scope: IScope) {
-        this.scope = $scope;   
-        this.title = "Home"
+    
+    public nome:string = "Home";
+    
+    static $inject = ['$scope'];
+    constructor(protected $scope: IScope) {
+        
     }
 
     public getData() : any {
@@ -20,7 +20,7 @@ class HomeController implements IComponentController {
     }
 
     $onInit() {
-        console.log("onInit");
+        console.log("onInit: "+this.nome);
     }
     
 }
