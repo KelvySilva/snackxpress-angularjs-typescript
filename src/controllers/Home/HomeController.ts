@@ -1,13 +1,15 @@
 
-import { IController, IComponentController } from 'angular';
-import HomeComponent from '../../components/Home/HomeComponent';
+import { IComponentController, IScope } from 'angular';
+
 
 class HomeController implements IComponentController {
 
-    
+    private scope:IScope;
+    public title: string;
 
-    public constructor() {
-        console.log("Alou home");        
+    public constructor($scope: IScope) {
+        this.scope = $scope;   
+        this.title = "Home"
     }
 
     public getData() : any {

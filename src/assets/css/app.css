@@ -1,0 +1,120 @@
+table tr td,table tr th {
+    font-size: .85rem;
+}
+
+.off-in-5 {
+
+  transition: 5000 ease-in-out;
+
+}
+.added-item .qtd-focus i {
+    pointer-events: none;
+}
+.added-item .qtd-focus {
+  background: #eee;
+  margin-right: .25rem;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+}
+.added-item {
+  border: 1px solid #ccc;
+  padding: .25rem 1rem;
+  border-radius: .25rem;
+  background: #fff;
+  margin-bottom: .25rem;
+}
+
+.ui-alert {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: .5rem;
+}
+.ui-alert.ui-error {
+    background-color: #f2dede;
+}
+.ui-alert.ui-success {
+    background-color: #d4edda;
+}
+.ui-alert-title {  
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.ui-alert-title.ui-error {
+    color: #af4341;
+}
+.ui-alert-title.ui-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.ui-alert-message {
+    font-size: 1.25rem;
+}
+.ui-alert-message.ui-error {
+    color: #af4341;
+}
+
+.ui-alert-message.ui-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+/* Simple sidebar */
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+min-height: 100vh;
+margin-left: -15rem;
+-webkit-transition: margin .25s ease-out;
+-moz-transition: margin .25s ease-out;
+-o-transition: margin .25s ease-out;
+transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+padding: 0.875rem 1.25rem;
+font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+width: 15rem;
+}
+
+#page-content-wrapper {
+min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+margin-left: 0;
+}
+
+@media (min-width: 768px) {
+#sidebar-wrapper {
+  margin-left: 0;
+}
+
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: -15rem;
+}
+}

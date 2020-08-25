@@ -16,6 +16,7 @@ class Configuration {
     
     public init() : void {
         this.$stateProvider.state("Home", Configuration.homeState());
+        this.$stateProvider.state("Clients", Configuration.clientsState());
         this.$stateProvider.state("Products", Configuration.productsState());
         this.$urlRouterProvider.otherwise("/home");
     }
@@ -24,8 +25,8 @@ class Configuration {
     public static homeState() : IState {
         return {
             url: "/home",
-            templateUrl:"../src/pages/home/home.html"
-            // controller:HomeController,
+            templateUrl:"../src/pages/home/home.html",
+            controller:HomeController,
             // component: "HomeComponent"
         };
     }
@@ -33,8 +34,16 @@ class Configuration {
     public static productsState() : IState {
         return {
             url:"/products",
-            templateUrl: "../src/pages/product/product.html"
-            // controller:HomeController,
+            templateUrl: "../src/pages/product/product.html",
+            controller: HomeController,
+            // component: "ProductComponent",           
+        };
+    }
+    public static clientsState() : IState {
+        return {
+            url:"/clients",
+            templateUrl: "../src/pages/clients/clients.html",
+            controller: HomeController,
             // component: "ProductComponent",           
         };
     }
