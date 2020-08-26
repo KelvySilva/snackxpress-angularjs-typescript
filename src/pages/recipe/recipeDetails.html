@@ -1,0 +1,52 @@
+<main class="jumbotron">
+    <div class="container "  >
+        <div class="row pb-5">
+            <div class="col-lg-12 text-left">
+             <h1 class="h2" ng-bind="viewComp.title">
+             </h1>
+     
+            </div>
+        </div>           
+    </div>
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <error-message ng-show="viewComp.error"></error-message>                    
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 pb-5 d-flex flex-row justify-content-between" ng-click="handleEditRecipe(recipe.id)" title="Editar" alt="Editar">
+                    <div class="text h3">Componentes:</div>
+                    <button class="btn btn-primary"><i class="fas fa-pen"></i></button>
+                </div>
+                <div class="col-lg-12">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Qtd</th>
+                                <th>Nome</th>
+                                <th>Custo</th>
+                            </tr>
+                        </thead>
+                        <tbody  >
+                            <tr ng-repeat="composite in viewComp.recipe.composities">
+                                <td>{{composite.quantity}} </td>
+                                <td>{{composite.ingredient.name}} </td>
+                                <td>{{composite.ingredient.cost | currency: 'R$&nbsp;'}} </td>
+                            </tr>
+                        </tbody>
+                        
+                        <tfoot> 
+                            <tr>
+                                <th colspan="2">Total</th>
+                                <td colspan="2"> {{viewComp.costTotal | currency: 'R$&nbsp;'}} </td> 
+                            </tr>
+                        </tfoot> 
+                       
+                    </table>
+                </div>
+            </div>
+       </div>
+    <!-- </div> -->
+  </main>

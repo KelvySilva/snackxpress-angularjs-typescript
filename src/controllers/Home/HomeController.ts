@@ -5,22 +5,15 @@ import { IScope, IController } from 'angular';
 class HomeController implements IController {
 
     
-    public nome:string = "Home";
+    public title:string = "Seja bem vindo!";
     
     static $inject = ['$scope'];
     constructor(protected $scope: IScope) {
         
     }
 
-    public getData() : any {
-        return {
-            message : "Hello Home"
-            
-        }
-    }
-
     $onInit() {
-        console.log("onInit: "+this.nome);
+        console.log("Home Init");
     }
     
 }

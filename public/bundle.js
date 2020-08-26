@@ -1260,19 +1260,199 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var angular_ui_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-ui-router */ \"./node_modules/angular-ui-router/lib-esm/index.js\");\n/* harmony import */ var _config_configuration__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/configuration */ \"./src/config/configuration.ts\");\n\n// import ngRoute from 'angular-route';\n\n// import IController  from 'angular';\n\n// import ProductControler from './controllers/Product/ProductController';\n// import HomeController from './controllers/Home/HomeController';\n// const productController: ProductControler = new ProductControler();\n// const homeController: HomeController = new HomeController();\nconst app = Object(angular__WEBPACK_IMPORTED_MODULE_0__[\"module\"])('snackxpress', [angular_ui_router__WEBPACK_IMPORTED_MODULE_1__[\"default\"]]);\napp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {\n        return new _config_configuration__WEBPACK_IMPORTED_MODULE_2__[\"default\"]($stateProvider, $urlRouterProvider, $locationProvider);\n    }]);\n/* harmony default export */ __webpack_exports__[\"default\"] = (app);\n\n\n//# sourceURL=webpack:///./src/app.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! angular */ \"./node_modules/angular/index.js\");\n/* harmony import */ var angular__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(angular__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var angular_ui_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular-ui-router */ \"./node_modules/angular-ui-router/lib-esm/index.js\");\n/* harmony import */ var _config_Configuration__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config/Configuration */ \"./src/config/Configuration.ts\");\n/* harmony import */ var _controllers_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./controllers/index */ \"./src/controllers/index.ts\");\n/* harmony import */ var _components_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/index */ \"./src/components/index.ts\");\n/* harmony import */ var _services_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/index */ \"./src/services/index.ts\");\n/* harmony import */ var _filters_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./filters/index */ \"./src/filters/index.ts\");\n\n\n\n\n\n\n\nclass App {\n    constructor() {\n        this.module = Object(angular__WEBPACK_IMPORTED_MODULE_0__[\"module\"])(\"snackxpress\", [angular_ui_router__WEBPACK_IMPORTED_MODULE_1__[\"default\"]]);\n        this.registerConfigRoutes();\n        this.registerControllers();\n        this.registerComponents();\n        this.registerServices();\n        this.registerFilters();\n    }\n    registerConfigRoutes() {\n        this.module.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {\n                return new _config_Configuration__WEBPACK_IMPORTED_MODULE_2__[\"default\"]($stateProvider, $urlRouterProvider, $locationProvider);\n            }]);\n    }\n    registerControllers() {\n        _controllers_index__WEBPACK_IMPORTED_MODULE_3__[\"default\"].forEach(controller => this.module.controller(controller.name, controller));\n    }\n    registerComponents() {\n        _components_index__WEBPACK_IMPORTED_MODULE_4__[\"default\"].forEach(component => this.module.component(component.NAME, new component));\n    }\n    registerServices() {\n        _services_index__WEBPACK_IMPORTED_MODULE_5__[\"default\"].forEach(service => this.module.service(service.name, service));\n    }\n    registerFilters() {\n        _filters_index__WEBPACK_IMPORTED_MODULE_6__[\"default\"].forEach(filter => this.module.filter(filter.name, () => filter));\n    }\n}\nApp.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (new App());\n\n\n//# sourceURL=webpack:///./src/app.ts?");
 
 /***/ }),
 
-/***/ "./src/config/configuration.ts":
+/***/ "./src/components/Home/HomeComponent.ts":
+/*!**********************************************!*\
+  !*** ./src/components/Home/HomeComponent.ts ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass HomeComponent {\n    constructor() {\n        this.bindings = {\n            textBinding: '@',\n            dataBinding: '<',\n            functionBinding: '&'\n        };\n        this.transclude = true;\n        this.controller = class HomeControllerComponent {\n            constructor($scope) {\n                this.$scope = $scope;\n                this.compNome = \"HomeComp\";\n            }\n        };\n        this.controllerAs = \"homeComp\",\n            this.templateUrl = \"../../src/pages/home/homeComponent.html\";\n    }\n}\nHomeComponent.NAME = \"homeComponent\";\n/* harmony default export */ __webpack_exports__[\"default\"] = (HomeComponent);\n\n\n//# sourceURL=webpack:///./src/components/Home/HomeComponent.ts?");
+
+/***/ }),
+
+/***/ "./src/components/Product/ProductComponent.ts":
+/*!****************************************************!*\
+  !*** ./src/components/Product/ProductComponent.ts ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass ProductComponent {\n    constructor() {\n        var _a;\n        this.bindings = {\n            textBinding: '@',\n            dataBinding: '<',\n            functionBinding: '&'\n        };\n        this.transclude = true;\n        this.controller = (_a = class ProductControlerComponent {\n                constructor($scope) {\n                    this.$scope = $scope;\n                    this.compNome = \"prodComp\";\n                }\n            },\n            _a.$inject = ['$scope'],\n            _a);\n        this.controllerAs = 'prdComp';\n        this.templateUrl = \"../../src/pages/product/productComponent.html\";\n    }\n}\nProductComponent.NAME = \"productComponent\";\n/* harmony default export */ __webpack_exports__[\"default\"] = (ProductComponent);\n\n\n//# sourceURL=webpack:///./src/components/Product/ProductComponent.ts?");
+
+/***/ }),
+
+/***/ "./src/components/index.ts":
+/*!*********************************!*\
+  !*** ./src/components/index.ts ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Home_HomeComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home/HomeComponent */ \"./src/components/Home/HomeComponent.ts\");\n/* harmony import */ var _Product_ProductComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Product/ProductComponent */ \"./src/components/Product/ProductComponent.ts\");\n\n\nconst components = [\n    _Home_HomeComponent__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    _Product_ProductComponent__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n];\n/* harmony default export */ __webpack_exports__[\"default\"] = (components);\n\n\n//# sourceURL=webpack:///./src/components/index.ts?");
+
+/***/ }),
+
+/***/ "./src/config/Configuration.ts":
 /*!*************************************!*\
-  !*** ./src/config/configuration.ts ***!
+  !*** ./src/config/Configuration.ts ***!
   \*************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass Configuration {\n    constructor($stateProvider, $urlRouterProvider, $locationProvider) {\n        this.$stateProvider = $stateProvider;\n        this.$urlRouterProvider = $urlRouterProvider;\n        this.$locationProvider = $locationProvider;\n        this.init();\n        console.log(\"Router\");\n    }\n    init() {\n        this.$stateProvider.state(\"Home\", Configuration.homeState());\n        this.$stateProvider.state(\"Products\", Configuration.productsState());\n        this.$urlRouterProvider.otherwise(\"/home\");\n    }\n    static homeState() {\n        return {\n            url: \"/home\",\n            templateUrl: \"../src/pages/home/home.html\"\n        };\n    }\n    static productsState() {\n        return {\n            url: \"/products\",\n            templateUrl: \"../src/pages/product/product.html\"\n        };\n    }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Configuration);\n\n\n//# sourceURL=webpack:///./src/config/configuration.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_Home_HomeController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/Home/HomeController */ \"./src/controllers/Home/HomeController.ts\");\n/* harmony import */ var _controllers_Product_ProductController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controllers/Product/ProductController */ \"./src/controllers/Product/ProductController.ts\");\n\n\nclass Configuration {\n    constructor($stateProvider, $urlRouterProvider, $locationProvider) {\n        this.$stateProvider = $stateProvider;\n        this.$urlRouterProvider = $urlRouterProvider;\n        this.$locationProvider = $locationProvider;\n        this.init();\n        console.log(\"Router\");\n    }\n    init() {\n        this.$stateProvider.state(\"Home\", Configuration.homeState());\n        this.$stateProvider.state(\"Clients\", Configuration.clientsState());\n        this.$stateProvider.state(\"Products\", Configuration.productsState());\n        this.$urlRouterProvider.otherwise(\"/home\");\n    }\n    static homeState() {\n        return {\n            url: \"/home\",\n            templateUrl: \"../src/pages/home/home.html\",\n            controller: _controllers_Home_HomeController__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n            controllerAs: 'view'\n            // component: \"HomeComponent\"\n        };\n    }\n    static productsState() {\n        return {\n            url: \"/products\",\n            templateUrl: \"../src/pages/product/product.html\",\n            controller: _controllers_Product_ProductController__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n            controllerAs: 'view'\n            // component: \"ProductComponent\",           \n        };\n    }\n    static clientsState() {\n        return {\n            url: \"/clients\",\n            templateUrl: \"../src/pages/clients/clients.html\",\n            controllerAs: 'view'\n            // component: \"ProductComponent\",           \n        };\n    }\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (Configuration);\n\n\n//# sourceURL=webpack:///./src/config/Configuration.ts?");
+
+/***/ }),
+
+/***/ "./src/controllers/Home/HomeController.ts":
+/*!************************************************!*\
+  !*** ./src/controllers/Home/HomeController.ts ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass HomeController {\n    constructor($scope) {\n        this.$scope = $scope;\n        this.nome = \"Home\";\n    }\n    getData() {\n        return {\n            message: \"Hello Home\"\n        };\n    }\n    $onInit() {\n        console.log(\"onInit: \" + this.nome);\n    }\n}\nHomeController.$inject = ['$scope'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (HomeController);\n\n\n//# sourceURL=webpack:///./src/controllers/Home/HomeController.ts?");
+
+/***/ }),
+
+/***/ "./src/controllers/Product/ProductController.ts":
+/*!******************************************************!*\
+  !*** ./src/controllers/Product/ProductController.ts ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass ProductControler {\n    constructor($scope, service) {\n        this.$scope = $scope;\n        this.service = service;\n        this.title = \"Produtos\";\n        this.products = [];\n    }\n    $onInit() {\n        this.service.listAll().then(res => {\n            this.products = res.data;\n        }).catch(err => {\n            console.log(err);\n        });\n    }\n}\nProductControler.$inject = ['$scope', 'ProductService'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (ProductControler);\n\n\n//# sourceURL=webpack:///./src/controllers/Product/ProductController.ts?");
+
+/***/ }),
+
+/***/ "./src/controllers/index.ts":
+/*!**********************************!*\
+  !*** ./src/controllers/index.ts ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Home_HomeController__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home/HomeController */ \"./src/controllers/Home/HomeController.ts\");\n/* harmony import */ var _Product_ProductController__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Product/ProductController */ \"./src/controllers/Product/ProductController.ts\");\n\n\nconst controllers = [\n    _Home_HomeController__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    _Product_ProductController__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n];\n/* harmony default export */ __webpack_exports__[\"default\"] = (controllers);\n\n\n//# sourceURL=webpack:///./src/controllers/index.ts?");
+
+/***/ }),
+
+/***/ "./src/environment/constants.ts":
+/*!**************************************!*\
+  !*** ./src/environment/constants.ts ***!
+  \**************************************/
+/*! exports provided: BASE_URL, COMPONENT_PAGES, ROUTER_PAGES */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"BASE_URL\", function() { return BASE_URL; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"COMPONENT_PAGES\", function() { return COMPONENT_PAGES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"ROUTER_PAGES\", function() { return ROUTER_PAGES; });\nconst BASE_URL = \"http://127.0.0.1:8082\";\nconst COMPONENT_PAGES = \"../../src/pages/\";\nconst ROUTER_PAGES = \"../src/pages/\";\n\n\n//# sourceURL=webpack:///./src/environment/constants.ts?");
+
+/***/ }),
+
+/***/ "./src/filters/index.ts":
+/*!******************************!*\
+  !*** ./src/filters/index.ts ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _limiter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./limiter */ \"./src/filters/limiter.ts\");\n\nconst filters = [\n    _limiter__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\n];\n/* harmony default export */ __webpack_exports__[\"default\"] = (filters);\n\n\n//# sourceURL=webpack:///./src/filters/index.ts?");
+
+/***/ }),
+
+/***/ "./src/filters/limiter.ts":
+/*!********************************!*\
+  !*** ./src/filters/limiter.ts ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst limiter = (input, maxsize) => {\n    if (input.length <= 2)\n        return input;\n    var out = input.substring(0, (maxsize || 2)) + \"...\";\n    return out;\n};\n// class Limiter {\n//     public static limiter(): Function  {\n//         return (input:string, maxsize:number) =>  {\n//             if(input.length <= 2) return input;\n//             var out = input.substring(0,(maxsize || 2 ))+\"...\";\n//             return out;        \n//         }\n//     }\n// }\n/* harmony default export */ __webpack_exports__[\"default\"] = (limiter);\n\n\n//# sourceURL=webpack:///./src/filters/limiter.ts?");
+
+/***/ }),
+
+/***/ "./src/services/Product/ClientService.ts":
+/*!***********************************************!*\
+  !*** ./src/services/Product/ClientService.ts ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _environment_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../environment/constants */ \"./src/environment/constants.ts\");\n\nclass ClientService {\n    constructor($http) {\n        this.$http = $http;\n        this.listAll = () => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/clients\");\n        };\n        this.findOne = (id) => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/client/\" + id);\n        };\n        this.saveOne = (client) => {\n            return this.$http.post(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/client/\", client);\n        };\n        this.updateOne = (id, client) => {\n            return this.$http.put(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/client/\" + id, client);\n        };\n        this.deleteOne = (id) => {\n            return this.$http.delete(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/client/\" + id);\n        };\n    }\n}\nClientService.$inject = ['$http'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (ClientService);\n\n\n//# sourceURL=webpack:///./src/services/Product/ClientService.ts?");
+
+/***/ }),
+
+/***/ "./src/services/Product/IngredientService.ts":
+/*!***************************************************!*\
+  !*** ./src/services/Product/IngredientService.ts ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _environment_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../environment/constants */ \"./src/environment/constants.ts\");\n\nclass IngredientService {\n    constructor($http) {\n        this.$http = $http;\n        this.listAll = () => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/ingredients\");\n        };\n        this.findOne = (id) => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/ingredient/\" + id);\n        };\n        this.saveOne = (ingredient) => {\n            return this.$http.post(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/ingredient/\", ingredient);\n        };\n        this.updateOne = (id, ingredient) => {\n            return this.$http.put(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/ingredient/\" + id, ingredient);\n        };\n        this.deleteOne = (id) => {\n            return this.$http.delete(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/ingredient/\" + id);\n        };\n    }\n}\nIngredientService.$inject = ['$http'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (IngredientService);\n\n\n//# sourceURL=webpack:///./src/services/Product/IngredientService.ts?");
+
+/***/ }),
+
+/***/ "./src/services/Product/MenuService.ts":
+/*!*********************************************!*\
+  !*** ./src/services/Product/MenuService.ts ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _environment_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../environment/constants */ \"./src/environment/constants.ts\");\n\nclass MenuService {\n    constructor($http) {\n        this.$http = $http;\n        this.listAll = () => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/menus\");\n        };\n        this.findOne = (id) => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/menu/\" + id);\n        };\n        this.saveOne = (menu) => {\n            return this.$http.post(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/menu/\", menu);\n        };\n        this.updateOne = (id, menu) => {\n            return this.$http.put(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/menu/\" + id, menu);\n        };\n        this.deleteOne = (id) => {\n            return this.$http.delete(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/menu/\" + id);\n        };\n        // MenuItem\n        this.findOneMenuItem = (id) => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/menu/item/\" + id);\n        };\n        this.updateOneMenuItem = (id, menuItem) => {\n            return this.$http.put(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/menu/item/\" + id, menuItem);\n        };\n    }\n}\nMenuService.$inject = ['$http'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (MenuService);\n\n\n//# sourceURL=webpack:///./src/services/Product/MenuService.ts?");
+
+/***/ }),
+
+/***/ "./src/services/Product/ProductService.ts":
+/*!************************************************!*\
+  !*** ./src/services/Product/ProductService.ts ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _environment_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../environment/constants */ \"./src/environment/constants.ts\");\n\nclass ProductService {\n    constructor($http) {\n        this.$http = $http;\n        this.listAll = () => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/products\");\n        };\n        this.findOne = (id) => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/product/\" + id);\n        };\n        this.saveOne = (product) => {\n            return this.$http.post(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/product/\", product);\n        };\n        this.updateOne = (id, product) => {\n            return this.$http.put(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/product/\" + id, product);\n        };\n        this.deleteOne = (id) => {\n            return this.$http.delete(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/product/\" + id);\n        };\n    }\n}\nProductService.$inject = ['$http'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (ProductService);\n\n\n//# sourceURL=webpack:///./src/services/Product/ProductService.ts?");
+
+/***/ }),
+
+/***/ "./src/services/Product/RecipeService.ts":
+/*!***********************************************!*\
+  !*** ./src/services/Product/RecipeService.ts ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _environment_constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../environment/constants */ \"./src/environment/constants.ts\");\n\nclass RecipeService {\n    constructor($http) {\n        this.$http = $http;\n        this.listAll = () => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/recipes\");\n        };\n        this.findOne = (id) => {\n            return this.$http.get(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/protected/recipe/\" + id);\n        };\n        this.saveOne = (recipe) => {\n            return this.$http.post(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/recipe/\", recipe);\n        };\n        this.updateOne = (id, recipe) => {\n            return this.$http.put(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/recipe/\" + id, recipe);\n        };\n        this.deleteOne = (id) => {\n            return this.$http.delete(_environment_constants__WEBPACK_IMPORTED_MODULE_0__[\"BASE_URL\"] + \"/v1/admin/recipe/\" + id);\n        };\n    }\n}\nRecipeService.$inject = ['$http'];\n/* harmony default export */ __webpack_exports__[\"default\"] = (RecipeService);\n\n\n//# sourceURL=webpack:///./src/services/Product/RecipeService.ts?");
+
+/***/ }),
+
+/***/ "./src/services/index.ts":
+/*!*******************************!*\
+  !*** ./src/services/index.ts ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Product_ProductService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Product/ProductService */ \"./src/services/Product/ProductService.ts\");\n/* harmony import */ var _Product_IngredientService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Product/IngredientService */ \"./src/services/Product/IngredientService.ts\");\n/* harmony import */ var _Product_RecipeService__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Product/RecipeService */ \"./src/services/Product/RecipeService.ts\");\n/* harmony import */ var _Product_ClientService__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Product/ClientService */ \"./src/services/Product/ClientService.ts\");\n/* harmony import */ var _Product_MenuService__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Product/MenuService */ \"./src/services/Product/MenuService.ts\");\n\n\n\n\n\nconst services = [\n    _Product_ProductService__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    _Product_IngredientService__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n    _Product_RecipeService__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    _Product_ClientService__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n    _Product_MenuService__WEBPACK_IMPORTED_MODULE_4__[\"default\"]\n];\n/* harmony default export */ __webpack_exports__[\"default\"] = (services);\n\n\n//# sourceURL=webpack:///./src/services/index.ts?");
 
 /***/ })
 

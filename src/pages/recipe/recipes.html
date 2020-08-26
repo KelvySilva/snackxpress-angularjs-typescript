@@ -1,0 +1,57 @@
+<main class="jumbotron">
+    <div class="container "  >
+        <div class="row pb-5">
+            <div class="col-lg-6 text-left">
+                <h1 class="h2" ng-bind="view.title"></h1>
+            </div>
+            <div class="col-lg-6 text-right">
+                <button class="btn btn-success" ng-click="handleAddRecipe()">Novo <i class="fas fa-plus"></i></button>
+            </div>
+     
+            </div>
+        </div>           
+    </div>
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+               <error-message ng-show="error"></error-message>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Custo</th>
+                            <th>Qtd Ingredients</th>
+                            <th>Preço</th>
+                            <th>Desconto</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="recipe in view.recipes">
+                            <td> {{recipe.id}} </td>
+                            <td> {{recipe.name | limiter:15}} </td>
+                            <td> {{recipe.productFinal.description }} </td>
+                            <td> {{recipe.productFinal.cost | currency: 'R$&nbsp;'}} </td>
+                            <td> {{recipe.composities.length}} </td>
+                            <td> {{recipe.productFinal.price | currency: 'R$&nbsp;'}} </td>
+                            <td> {{recipe.productFinal.discount | currency: 'R$&nbsp;'}} </td>
+                            <td class="d-flex flex-row">
+                                <a ui-sref="Recipe({recipe_id: recipe.id})"  class="btn btn-primary p-1 mr-1">
+                                    <i class="fas fa-binoculars"></i>
+                                </a>
+                               
+                                <button class="btn btn-danger p-1">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+       </div>
+    <!-- </div> -->
+  </main>

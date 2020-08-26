@@ -29,7 +29,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="product in view.loadProducts() track by $index">
+                        <tr ng-repeat="product in view.products track by $index">
                             <td> {{product.id}} </td>
                             <td> {{product.name | limiter: 15: "," }} </td>
                             <td> {{product.description | limiter: 15 }} </td>
@@ -39,8 +39,8 @@
                             <td> {{(product.cost * product.stock.quantity) | currency: 'R$&nbsp;' }} </td>
                             <td> {{product.price | currency: 'R$&nbsp;' }} </td>
                             <td> {{product.discount | currency: 'R$&nbsp;' }} </td>
-                            <td>
-                                <button ng-if="product.origin != 'MANUFACTURED'" class="btn btn-primary p-1 mb-1"><i class="fas fa-pen"></i></button>
+                            <td class="d-flex flex-row">
+                                <button ng-if="product.origin != 'MANUFACTURED'" class="btn btn-primary p-1 mr-1"><i class="fas fa-pen"></i></button>
                                 <button class="btn btn-danger p-1"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
