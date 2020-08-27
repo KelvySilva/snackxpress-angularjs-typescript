@@ -7,5 +7,6 @@ export class Ingredient {
     cost?:number;
     stock?: Stock;
     type?:string;
+    origin?:string;
 }
 

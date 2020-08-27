@@ -11,6 +11,8 @@ import MenuService from "../services/Menu/MenuService";
 import { Menu } from "../models/Menu";
 import MenuDetailComponent from "../components/Menu/MenuDetailComponent";
 import RecipeDetailComponent from "../components/Recipe/RecipeDetailComponent";
+import IngredientEditionComponent from "../components/Ingredient/IngredientEditionComponent";
+import RecipeEditionComponent from "../components/Recipe/RecipeEditionsComponent";
 
 class Configuration {
     
@@ -28,11 +30,13 @@ class Configuration {
         this.$stateProvider.state(Configuration.clientsState());
         this.$stateProvider.state(Configuration.productsState());
         this.$stateProvider.state(Configuration.ingredientsState())
+        this.$stateProvider.state(Configuration.ingredientEditionState())
         this.$stateProvider.state(Configuration.recipesState())
         this.$stateProvider.state(Configuration.recipeState())
+        this.$stateProvider.state(Configuration.recipeEditionsState())
         this.$stateProvider.state(Configuration.menusState())
         this.$stateProvider.state(Configuration.menuState())
-        this.$urlRouterProvider.otherwise("/home");
+        this.$urlRouterProvider.otherwise("/home");        
     }
 
 
@@ -65,6 +69,17 @@ class Configuration {
         };
     }
 
+    public static ingredientEditionState() : IState {
+        return {
+            name:"Ingredient",
+            url:"/ingredient",
+            component: IngredientEditionComponent.NAME,
+            params: {
+                ingredient_id: null
+            }
+        };
+    }
+
     public static recipesState() : IState {
         return {
             name:"Recipes",
@@ -80,9 +95,20 @@ class Configuration {
             name:"Recipe",
             url:"/recipe/:recipe_id",
             params: {
-                recipe_id:'0'
+                recipe_id:null
             },
             component: RecipeDetailComponent.NAME
+        };
+    }
+
+    public static recipeEditionsState() : IState {
+        return {
+            name:"RecipeEdition",
+            url:"/recipe/edit/:recipe_id",
+            params: {
+                recipe_id:null
+            },
+            component: RecipeEditionComponent.NAME
         };
     }
 
@@ -111,7 +137,7 @@ class Configuration {
             name:"Menu",
             url:"/menu/:menu_id",
             params: {
-                menu_id:'0'
+                menu_id:null
             },
             component: MenuDetailComponent.NAME
             

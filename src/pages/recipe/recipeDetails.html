@@ -16,9 +16,9 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-12 pb-5 d-flex flex-row justify-content-between" ng-click="handleEditRecipe(recipe.id)" title="Editar" alt="Editar">
+                <div class="col-lg-12 pb-5 d-flex flex-row justify-content-between" title="Editar" alt="Editar">
                     <div class="text h3">Componentes:</div>
-                    <button class="btn btn-primary"><i class="fas fa-pen"></i></button>
+                    <a ui-sref="RecipeEdition({recipe_id: viewComp.recipe.id})" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                 </div>
                 <div class="col-lg-12">
                     <table class="table table-bordered table-striped">

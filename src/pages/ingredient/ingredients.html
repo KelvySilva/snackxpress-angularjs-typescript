@@ -4,8 +4,8 @@
             <div class="col-lg-6 text-left">
                 <h1 class="h2" ng-bind="view.title"></h1>
             </div>
-            <div class="col-lg-6 text-right">
-                <button class="btn btn-success" ng-click="handleAddIngredient()">Novo <i class="fas fa-plus"></i></button>
+            <div class="col-lg-6 text-right">                
+                <a class="btn btn-success" ui-sref="Ingredient({ingredient_id: '0'})" ui-sref-active="cls_active"="handleAddIngredient()">Novo <i class="fas fa-plus"></i></a>
             </div>
         </div>           
     </div>
@@ -29,7 +29,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="ingredient in view.ingredients">
+                        <tr ng-repeat="ingredient in view.ingredients | orderBy:'+name'">
                             <td> {{ingredient.id}} </td>
                             <td> {{ingredient.name | limiter:15}} </td>
                             <td> {{ingredient.description }} </td>
@@ -37,9 +37,10 @@
                             <td> {{ingredient.stock.quantity}} </td>
                             <td> {{(ingredient.stock.quantity * ingredient.cost) | currency: 'R$&nbsp;'}} </td>
                             <td>
-                                <button ng-click="handleEditIngredient(ingredient.id)" class="btn btn-primary p-1
-                                "><i class="fas fa-pen"></i></button>
-                                <button  ng-click="handleDeleteIngredient(ingredient.id)" class="btn btn-danger p-1"><i class="fas fa-trash-alt"></i></button>
+                                <a ui-sref="Ingredient({ingredient_id: ingredient.id})" class="btn btn-primary p-1">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <button  ng-click="view.handleDeleteIngredient(ingredient.id)" class="btn btn-danger p-1"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                     </tbody>

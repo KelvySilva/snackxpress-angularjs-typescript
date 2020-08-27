@@ -1,0 +1,89 @@
+<main class="jumbotron" >
+    <div class="container ">
+        <div class="row pb-5">
+            <div class="col-lg-12 text-left">
+                <h1 class="h2" ng-bind="viewComp.title"></h1>     
+            </div>
+        </div>           
+    </div>
+    
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <error-message ng-show="error"></error-message> 
+                    <toaster-container></toaster-container>              
+                </div>
+                <div class="col-lg-12">
+                    <form class="form">
+                                          
+                        <div ng-if="formProdFinal"  class="form-row border  rounded p-2 mb-2">
+                                show2
+                        </div>
+                        <div class="form-row border  rounded p-2 mb-2">
+                            <div class="form-group col-lg-12 text-center">
+                                <h3>Dados da Recieta:</h3>
+                            </div>                            
+                            <div class="form-group col-lg-12">                            
+                                <input type="text" placeholder="Nome da Receita:" ng-model="viewComp.recipe.name" class="form-control">
+                                <input type="hidden" ng-model="viewComp.recipe.id" class="form-control">
+                                <input type="hidden" ng-model="viewComp.productFinal.id" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-12">                            
+                                <input type="text" placeholder="Nome do produto final:" ng-model="viewComp.productFinal.name" class="form-control">
+                            </div>
+                        
+                            <div class="form-group col-lg-12">
+                                <textarea type="text" placeholder="Descrição do produto:" ng-model="viewComp.productFinal.description" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="productFinal.cost">Custo do Produto (opcional)</label>
+                                <input type="text"  money-mask  ng-model="viewComp.productFinal.cost" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="productFinal.discount">Desconto do Produto (opcional)</label>
+                                <input type="text" placeholder="Desconto do produto:" money-mask  ng-model="viewComp.productFinal.discount" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="productFinal.price">Preço do Produto</label>
+                                <input type="text" placeholder="Preço do produto:" money-mask  ng-model="viewComp.productFinal.price" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row border  p-2 rounded mb-2">
+                            <div class="form-group col-lg-12 text-center"> 
+                                <h3>Ingredientes:</h3>
+                            </div>
+                            <div class="form-group col-lg-6 ">
+                                <div class="d-flex flex-row added-item justify-content-between align-items-center" id="comp-{{composite.ingredient.id}}" 
+                                ng-repeat="composite in viewComp.composities track by $index">
+                                    <div class=""> {{composite.ingredient.name}} </div>
+                                    <div class="d-flex flex-row">
+                                        <div class="px-3 py-1 qtd-focus"> {{composite.quantity}} </div>
+                                        <button class="btn btn-danger p-1" ng-click="viewComp.handleRemoveComposite($index)"><i class="fas fa-trash-alt"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <select ng-model="composite.ingredient" ng-required="true" ng-options="ingredientToSelect.name for ingredientToSelect in viewComp.ingredientsToSelect" class="form-control" id="">
+                                    <option value="">Selecione o ingrediente</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-1">
+                                <input ng-model="composite.quantity" type="number" min="1" ng-required="true" class="form-control" id="">
+                            </div>
+                            <div class="form-group col-lg-1">                                
+                                <button class="btn btn-success py-2" ng-disabled="!(composite.quantity)" ng-click="viewComp.handleAddComposite(composite)"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                       <div class="form-row py-3">
+                            <div class="form-group col-lg-12 text-right">
+                                <button class="btn btn-success" ng-click="viewComp.handleAddRecipe()">Salvar</button>
+                            </div>
+                       </div>
+                       
+                    </form>
+                </div>
+            </div>
+       </div>
+    <!-- </div> -->
+  </main>

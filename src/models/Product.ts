@@ -9,5 +9,6 @@ export class Product {
     price?: number;
     stock?: Stock;
     type?: string;
+    origin?: string;
 }
 
