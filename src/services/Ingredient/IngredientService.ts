@@ -1,6 +1,6 @@
 import IService from '../IService';
 import { Ingredient } from '../../models/Ingredient';
-import { IHttpService, IHttpResponse, IHttpPromise } from 'angular';
+import { IHttpService, IHttpPromise } from 'angular';
 import { BASE_URL } from '../../environment/constants';
 
 class IngredientService implements IService<Ingredient> {

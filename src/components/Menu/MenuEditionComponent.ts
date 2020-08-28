@@ -37,7 +37,10 @@ class MenuEditionComponent implements IComponentOptions {
                 protected productService: ProductService,
                 protected $timeout: ITimeoutService,
                 protected $state: IStateService                 
-                ) {}
+                ) {
+                    this.item.productList = []; 
+                    this.menuItems = [];
+                }
 
 
             $onInit() {
@@ -46,6 +49,7 @@ class MenuEditionComponent implements IComponentOptions {
                 }).catch(err => console.log(err));
 
                 const id:number = this.$stateParams.menu_id;
+                
                 if(id > 0) {
                     this.editMenu(id);
                 }
@@ -62,7 +66,9 @@ class MenuEditionComponent implements IComponentOptions {
             }
 
             public handleAddProdToList = (productToSelect:Product) => {
+                console.log(productToSelect);                
                 this.item.productList?.push(copy(productToSelect));
+                console.log(this.item.productList);                
             }
         
             public handleRemoveProdToList = (index: number) => {
@@ -92,7 +98,7 @@ class MenuEditionComponent implements IComponentOptions {
                     menuItem.total = 0;
                     menuItem.subtotal = 0;
                     return menuItem;
-                })
+                });
                 this.menu.menuItems = this.menuItems;
                 this.service.saveOne(this.menu).then(res => {
                     Toastr.success( "Cardápio salvo com sucesso!", "Feito!");
@@ -105,11 +111,11 @@ class MenuEditionComponent implements IComponentOptions {
                 
             }
         
-            public handleEditMenuItem = (item_id:number) => {
-                let path = "/menu/edit/"+this.menu.id+"/item/"+item_id;
-                console.log(path);
-                this.$state.go(path);
-            }
+            // public handleEditMenuItem = (item_id:number) => {
+            //     let path = "/menu/edit/"+this.menu.id+"/item/"+item_id;
+            //     console.log(path);
+            //     this.$state.go(path);
+            // }
         }
     }
 }

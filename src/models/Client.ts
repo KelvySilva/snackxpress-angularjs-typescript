@@ -1,4 +1,5 @@
 export class Client {
+    id?:number;
     address?:string;
     addressNumber?:string;
     cep?:string;

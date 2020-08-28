@@ -2,7 +2,7 @@ import { IComponentOptions, IController, copy, IScope} from "angular";
 import { IStateParamsService } from "angular-ui-router";
 import { IStateService } from "angular-ui-router";
 import RecipeService from "../../services/Recipe/RecipeService";
-import IngredientService from "../../services/Ingredients/IngredientService";
+import IngredientService from "../../services/Ingredient/IngredientService";
 import { Ingredient } from "../../models/Ingredient";
 import { Composite } from "../../models/Composite";
 import Toastr from 'toastr';

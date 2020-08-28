@@ -1,0 +1,52 @@
+<main class="jumbotron">
+    <div class="container "  >
+        <div class="row pb-5">
+            <div class="col-lg-12 d-flex justify-content-between">
+                <h1 class="h2" ng-bind="viewComp.title"></h1>
+            </div>
+        </div>           
+    </div>
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                <error-message ng-show="error"></error-message>
+                <toaster-container></toaster-container>     
+                
+                </div>
+            </div>
+            <div class="row">
+                <!-- {{menuItem}} -->
+            </div>
+            <div class="row">
+                <form class="form w-100" name="formItem">
+                        <input type="hidden" ng-model="viewComp.menuItem.id" ng-value="viewComp.menuItem.id">
+                        Tipo:<div class="form-group col-lg-6 added-item text-muted">
+                           <select ng-model="viewComp.menuItem.category"  class="form-control" ng-value="viewComp.menuItem.category" id="">
+                               <option value="">Selecione um tipo</option>
+                               <option value="SNACK">LANCHE</option>
+                               <option value="DRINK">BEBIDA</option>
+                               <option value="COMBO">COMBO</option>
+                           </select>
+                        </div>
+                        Prdutos: <div class="form-group col-lg-6 added-item text-muted" ng-repeat="product in viewComp.menuItem.productList track by $index">                            
+                           {{product.name}} - <span class="font-weight-bold">Preço Unitário: {{product.price | currency}} </span>
+                        </div>
+                        
+                        <div class="form-group col-lg-6 px-0">
+                            <label for="menuItem.discountAmount">Desconto Atual:</label>
+                           <input type="text" ng-model="viewComp.menuItem.discountAmount" money-mask ng-value="viewComp.menuItem.discountAmount | currency" class="form-control">
+                        </div>
+                        Valor total do Item: 
+                        <div class="form-group col-lg-6 added-item text-muted" >                            
+                            <!-- {{(menuItem.subtotal - menuItem.discountAmount | currency)}} -->
+                            {{(viewComp.menuItem.subtotal - (viewComp.menuItem.discountAmount)) | currency}}
+                        </div>
+                        <div class="form-group col-lg-6 px-0">
+                           <button class="btn btn-success" ng-click="viewComp.handleSaveMenuItem()">Salvar</button>
+                        </div>
+                </form>
+            </div>
+       </div>
+    <!-- </div> -->
+  </main>

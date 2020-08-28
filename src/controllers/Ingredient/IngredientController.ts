@@ -1,5 +1,5 @@
 import { IController, IScope, IHttpResponse } from 'angular';
-import IngredientService from '../../services/Ingredients/IngredientService';
+import IngredientService from '../../services/Ingredient/IngredientService';
 import { Ingredient } from '../../models/Ingredient';
 import Toastr from 'toastr';
 

@@ -4,6 +4,7 @@ import RecipeControler from './Recipe/RecipeController';
 import ClientControler from './Client/ClientController';
 import IngredientControler from './Ingredient/IngredientController';
 import MenuControler from './Menu/MenuController';
+import OrderController from './Order/OrderController';
 
 const controllers = [
     HomeController,
@@ -11,7 +12,8 @@ const controllers = [
     RecipeControler,
     ClientControler,
     IngredientControler,
-    MenuControler
+    MenuControler,
+    OrderController
 ];
 
 export default controllers;

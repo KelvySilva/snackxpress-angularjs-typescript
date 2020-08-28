@@ -29,8 +29,8 @@ class MenuService implements IService<Menu> {
 
     // MenuItem
 
-    public findOneMenuItem = (id:number) : IHttpPromise<MenuItem[]> => {
-        return this.$http.get<MenuItem[]>(BASE_URL+"/v1/protected/menu/item/"+id);
+    public findOneMenuItem = (id:number) : IHttpPromise<MenuItem> => {
+        return this.$http.get<MenuItem>(BASE_URL+"/v1/protected/menu/item/"+id);
     }
 
     public updateOneMenuItem = (id:number, menuItem:MenuItem) : IHttpPromise<MenuItem[]> => {

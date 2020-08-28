@@ -3,8 +3,11 @@
 <main class="jumbotron" >
     <div class="container "  >
         <div class="row pb-5">
-            <div class="col-lg-12 text-left">
+            <div class="col-lg-6 text-left">
                 <h1 class="h2" ng-bind="view.title"></h1>     
+            </div>
+            <div class="col-lg-6 text-right">
+                <a ui-sref="ProductEdition({product_id: '0'})" class="btn btn-success">Novo <i class="fas fa-plus"></i></a>
             </div>
         </div>           
     </div>
@@ -40,8 +43,8 @@
                             <td> {{product.price | currency: 'R$&nbsp;' }} </td>
                             <td> {{product.discount | currency: 'R$&nbsp;' }} </td>
                             <td class="d-flex flex-row">
-                                <button ng-if="product.origin != 'MANUFACTURED'" class="btn btn-primary p-1 mr-1"><i class="fas fa-pen"></i></button>
-                                <button class="btn btn-danger p-1"><i class="fas fa-trash-alt"></i></button>
+                                <a ui-sref="ProductEdition({product_id: product.id})" ui-sref-active="cls_active" ng-if="product.origin != 'MANUFACTURED'" class="btn btn-primary p-1 mr-1"><i class="fas fa-pen"></i></a>
+                                <button class="btn btn-danger p-1" ng-click="view.handleDeleteProduct(product.id)"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                     </tbody>

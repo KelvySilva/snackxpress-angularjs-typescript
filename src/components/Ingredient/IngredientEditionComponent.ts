@@ -1,5 +1,5 @@
 import { IComponentOptions, IController, IScope, ITimeoutService } from "angular";
-import IngredientService from "../../services/Ingredients/IngredientService";
+import IngredientService from "../../services/Ingredient/IngredientService";
 import { IStateParamsService, IStateService } from "angular-ui-router";
 import { Ingredient } from "../../models/Ingredient";
 import Toastr from "toastr";

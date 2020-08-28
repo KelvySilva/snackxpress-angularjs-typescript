@@ -1,0 +1,106 @@
+<main class="jumbotron">
+    <div class="container "  >
+        <div class="row pb-5">
+            <div class="col-lg-12 text-left">
+             <h1 class="h2" ng-bind="viewComp.title">
+             </h1>
+     
+            </div>
+        </div>           
+    </div>
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <error-message ng-show="viewComp.error"></error-message>                    
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 pb-5 d-flex flex-row justify-content-between" title="Editar" alt="Editar">
+                    <div class="text h3">Venda : {{viewComp.order.id}}</div>
+                    <a ui-sref="RecipeEdition({recipe_id: viewComp.recipe.id})" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                </div>
+                <div class="col-lg-12">
+                    <label for="" class="font-weight-bold">Dados da Venda</label>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Qtd Itens</th>
+                                <th>Subtotal</th>
+                                <th>Total de descontos</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{viewComp.order.id}} </td>
+                                <td>{{viewComp.order.itemList.length}} </td>
+                                <td>{{viewComp.order.subtotal | currency: 'R$&nbsp;'}} </td>
+                                <td>{{viewComp.order.discountAmount | currency: 'R$&nbsp;'}} </td>
+                                <td>{{viewComp.order.total | currency: 'R$&nbsp;'}} </td>                                
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+
+                    <!-- Items -->
+                    <label for="" class="font-weight-bold">Itens da Venda</label>                    
+                    <table class="table table-bordered table-striped" ng-repeat="item in viewComp.order.itemList track by $index">
+                        <thead class="">
+                            <tr>
+                                <th>Nome do produto</th>
+                                <th>Desconto do produto</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>                            
+                            <tr ng-repeat="product in item.products track by $index">                                
+                                <td>{{product.name}} </td>                            
+                                <td>{{product.discount | currency: 'R$&nbsp;'}} </td>                            
+                                <td>{{product.price | currency: 'R$&nbsp;'}} </td>    
+                            </tr>                         
+                        </tbody>
+                        <tfoot>
+                           
+                            <tr>
+                                <td colspan="2" class=" bg-light-gray font-weight-bold "> Subtotal </td>
+                                <td class="bg-light-gray font-weight-bold">{{item.subtotal | currency: 'R$&nbsp;'}} </td>       
+                            </tr>
+                            <tr>
+                                <td colspan="2" class=" bg-light-gray font-weight-bold "> Desconto do item </td>
+                                <td class="bg-light-gray font-weight-bold">{{item.discount | currency: 'R$&nbsp;'}} </td>    
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="bg-light-gray font-weight-bold "> Total </td>
+                                <td class="bg-light-gray font-weight-bold">{{item.total | currency: 'R$&nbsp;'}} </td>   
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <!-- Cliente -->
+                    <label for="" class="font-weight-bold">Dados Cliente</label>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Endereço</th>
+                                <th>Telefone</th>
+                            </tr>
+                        </thead>
+                        <tbody>                            
+                            <tr>
+                                 
+                                <td>{{viewComp.order.client.id}} </td>
+                                <td>{{viewComp.order.client.name}} </td>                            
+                                <td>{{viewComp.order.client.address}}, {{viewComp.order.client.addressNumber}} - {{viewComp.order.client.cep}} - {{viewComp.order.client.city}}/{{viewComp.order.client.state}} </td>                            
+                                <td>{{viewComp.order.client.phone}} </td>   
+                            </tr>                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+       </div>
+    <!-- </div> -->
+  </main>

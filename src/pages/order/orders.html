@@ -1,0 +1,58 @@
+
+<order-component></order-component>
+<main class="jumbotron" >
+    <div class="container "  >
+        <div class="row pb-5">
+            <div class="col-lg-6 text-left">
+                <h1 class="h2" ng-bind="view.title"></h1>     
+            </div>
+            <div class="col-lg-6 text-right">
+                <!-- <a ui-sref="ProductEdition({order_id: '0'})" class="btn btn-success">Novo <i class="fas fa-plus"></i></a> -->
+            </div>
+        </div>           
+    </div>
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+               <error-message ng-show="error"></error-message>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>STATUS</th>
+                            <th>Qtd Itens</th>
+                            <th>Subtotal</th>
+                            <th>Descontos</th>
+                            <th>Total</th>
+                            <th>Ações</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="order in view.orders | orderBy:'-id' track by $index">
+                            <td> {{order.id}} </td>
+                            <td> {{order.client.name }} </td>
+                            <td> 
+                                <select ng-model="optionSelected" ng-value="order.status"  id="">
+                                    <option value="">(Colocar os demais status )</option>
+                                    
+                                </select>
+                            </td>
+                            <td> {{order.itemList.length }} </td>
+                            <td> {{order.subtotal  | currency: 'R$&nbsp;'}} </td>
+                            <td> {{order.discountAmount | currency: 'R$&nbsp;' }} </td>
+                            <td class="font-weight-bold"> {{order.total | currency: 'R$&nbsp;' }} </td>
+                           
+                            <td class="d-flex flex-row">
+                                <a ui-sref="Order({order_id: order.id})" class="btn btn-primary p-1 mr-1"><i class="fas fa-binoculars"></i></a>
+                                <!-- <button class="btn btn-danger p-1" ng-click="view.handleDeleteProduct(order.id)"><i class="fas fa-trash-alt"></i></button> -->
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+       </div>
+  </main> 

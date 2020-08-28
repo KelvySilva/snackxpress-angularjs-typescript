@@ -1,10 +1,14 @@
 <main class="jumbotron">
     <div class="container "  >
         <div class="row pb-5">
-            <div class="col-lg-12 text-left">
-             <h1 class="h2" ng-bind="view.title">
-             </h1>
-     
+            <div class="col-lg-6 text-left">
+                <h1 class="h2" ng-bind="view.title"> </h1>     
+            </div>
+            <div class="col-lg-6 text-right">
+                <a ui-sref="ClientEdition({client_id: '0'})" class="btn btn-success">
+                    Novo <i class="fas fa-plus"></i>
+                </a>
+                
             </div>
         </div>           
     </div>
@@ -21,6 +25,7 @@
                             <th>CPF</th>
                             <th>Endereço</th>
                             <th>Fone de contato</th>
+                            <th>Ações</th>
                           
                         </tr>
                     </thead>
@@ -31,7 +36,11 @@
                             <td> {{client.cpf }} </td>
                             <td> {{client.address }}, Nº {{client.addressNumber }} - CEP: {{client.cep }} - {{client.city }} / {{client.state }} </td>
                             <td> {{client.phone }} </td>
-                            
+                            <td class="d-flex flex-row">
+                                <a ui-sref="ClientEdition({client_id: client.id})" ng-show="client.cpf != 'N/A'" class="btn btn-primary p-1">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
