@@ -7,7 +7,7 @@
                 <h1 class="h2" ng-bind="view.title"></h1>     
             </div>
             <div class="col-lg-6 text-right">
-                <!-- <a ui-sref="ProductEdition({order_id: '0'})" class="btn btn-success">Novo <i class="fas fa-plus"></i></a> -->
+                <a ui-sref="Sale" class="btn btn-success">Novo <i class="fas fa-plus"></i></a>
             </div>
         </div>           
     </div>
@@ -35,8 +35,15 @@
                             <td> {{order.id}} </td>
                             <td> {{order.client.name }} </td>
                             <td> 
-                                <select ng-model="optionSelected" ng-value="order.status"  id="">
-                                    <option value="">(Colocar os demais status )</option>
+                                
+                                <select ng-model="order.status" ng-disabled="order.status == 'CANCELED' || order.status == 'FINISHED'" class="form-control form-control-sm status-{{order.status}}  "  ng-change="view.handleChangeStatus(this)" ng-value="order.status"  id="">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="PROGRESS">PROGRESS</option>
+                                    <option value="PROCESSING">PROCESSING</option>
+                                    <option value="READY">READY</option>
+                                    <option value="DELIVERY">DELIVERY</option>
+                                    <option value="CANCELED">CANCELED</option>
+                                    <option value="FINISHED">FINISHED</option>
                                     
                                 </select>
                             </td>

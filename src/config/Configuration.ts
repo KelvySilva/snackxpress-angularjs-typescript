@@ -19,6 +19,7 @@ import ClientEditionComponent from "../components/Client/ClientEditionComponent"
 import ProductEdtitionComponent from "../components/Product/ProductEditionComponent";
 import OrderController from "../controllers/Order/OrderController";
 import OrderDetailComponent from "../components/Order/OrderDetailComponent";
+import OrderCreationComponent from "../components/Order/OrderCreation";
 
 class Configuration {
     
@@ -37,17 +38,18 @@ class Configuration {
         this.$stateProvider.state(Configuration.clientEditionState());
         this.$stateProvider.state(Configuration.productsState());
         this.$stateProvider.state(Configuration.productEditionState());
-        this.$stateProvider.state(Configuration.ingredientsState())
-        this.$stateProvider.state(Configuration.ingredientEditionState())
-        this.$stateProvider.state(Configuration.recipesState())
-        this.$stateProvider.state(Configuration.recipeState())
-        this.$stateProvider.state(Configuration.recipeEditionsState())
-        this.$stateProvider.state(Configuration.menusState())
-        this.$stateProvider.state(Configuration.menuEditionState())
-        this.$stateProvider.state(Configuration.menuItemEditionState())
-        this.$stateProvider.state(Configuration.menuState())
-        this.$stateProvider.state(Configuration.ordersState())
-        this.$stateProvider.state(Configuration.orderState())
+        this.$stateProvider.state(Configuration.ingredientsState());
+        this.$stateProvider.state(Configuration.ingredientEditionState());
+        this.$stateProvider.state(Configuration.recipesState());
+        this.$stateProvider.state(Configuration.recipeState());
+        this.$stateProvider.state(Configuration.recipeEditionsState());
+        this.$stateProvider.state(Configuration.menusState());
+        this.$stateProvider.state(Configuration.menuEditionState());
+        this.$stateProvider.state(Configuration.menuItemEditionState());
+        this.$stateProvider.state(Configuration.menuState());
+        this.$stateProvider.state(Configuration.ordersState());
+        this.$stateProvider.state(Configuration.orderState());
+        this.$stateProvider.state(Configuration.orderCreationState());
         this.$urlRouterProvider.otherwise("/home");        
     }
 
@@ -218,6 +220,15 @@ class Configuration {
                 order_id: null
             },
             component: OrderDetailComponent.NAME
+        };
+    }
+
+
+    public static orderCreationState() : IState {
+        return {
+            name:"Sale",
+            url:"/sale",
+            component: OrderCreationComponent.NAME
         };
     }
 

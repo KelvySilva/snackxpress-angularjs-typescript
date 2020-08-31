@@ -26,6 +26,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Status</th>
                                 <th>Qtd Itens</th>
                                 <th>Subtotal</th>
                                 <th>Total de descontos</th>
@@ -35,6 +36,7 @@
                         <tbody>
                             <tr>
                                 <td>{{viewComp.order.id}} </td>
+                                <td>{{viewComp.order.status}} </td>
                                 <td>{{viewComp.order.itemList.length}} </td>
                                 <td>{{viewComp.order.subtotal | currency: 'R$&nbsp;'}} </td>
                                 <td>{{viewComp.order.discountAmount | currency: 'R$&nbsp;'}} </td>

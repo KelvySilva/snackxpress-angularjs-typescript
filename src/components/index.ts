@@ -9,6 +9,7 @@ import MenuItemEditionComponent from "./Menu/MenuItemEditionComponent";
 import ClientEditionComponent from "./Client/ClientEditionComponent";
 import ProductEdtitionComponent from "./Product/ProductEditionComponent";
 import OrderDetailComponent from "./Order/OrderDetailComponent";
+import OrderCreationComponent from "./Order/OrderCreation";
 
 const components = [
     HomeComponent,
@@ -21,7 +22,8 @@ const components = [
     MenuEditionComponent,
     MenuItemEditionComponent,
     ClientEditionComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    OrderCreationComponent
 ];
 
 export default components;

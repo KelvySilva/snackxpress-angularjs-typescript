@@ -1,0 +1,58 @@
+<main class="jumbotron">
+    <div class="container ">
+        <div class="row pb-5">
+            <div class="col-lg-12 text-left">
+             <h1 class="h2" ng-bind="viewComp.title">
+             </h1>
+     
+            </div>
+        </div>           
+    </div>
+        
+        <div class="container ">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <error-message ng-show="error"></error-message>               
+                </div>
+                <div class="col-lg-12">
+                    <form class="form">
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">                                                           
+                                <label for="viewComp.order.name">Nome:</label>
+                                <input type="hidden" ng-model="viewComp.order.id" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <label for="viewComp.order.description">Cardápio:</label>
+                                <select type="hidden" ng-model="viewComp.menu" ng-change="viewComp.handleSelectMenu(this)" ng-options="menu.name for menu in viewComp.menus track by menu.id" class="form-control">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row" ng-show="viewComp.itemsToSelect.length">
+                            <div class="form-group col-lg-6">
+                                <label for="viewComp.order.description">Itens:</label>
+                                <select type="hidden" ng-model="viewComp.item" ng-options="item.name for item in viewComp.itemsToSelect track by item.id" class="form-control">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <label for="viewComp.order.description">Descrição:</label>
+                                <input type="hidden" ng-model="viewComp.order.id" class="form-control">
+                            </div>
+                        </div>
+                       
+                        <div class="form-row">
+                            <div class="form-group col-lg-12">
+                                <button class="btn btn-primary" ng-click="viewComp.handleSaveIngredient(viewComp.order)">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+       </div>
+    <!-- </div> -->
+  </main>

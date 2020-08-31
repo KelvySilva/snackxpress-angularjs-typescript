@@ -40,13 +40,7 @@ class OrderDetailComponent implements IComponentOptions {
                 });
             }
 
-            public handleChangeStatus(id:number, option: string) {
-                this.service.changeStatus(id, option).then(res => {
-                    Toastr.success("Status Alterado!", "Feito");
-                }).catch(err => {
-                    Toastr.error("Algo deu errado!", "Ops...");
-                });
-            }
+            
         }
     }
 }

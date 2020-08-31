@@ -71,6 +71,15 @@ table tr td,table tr th {
   border-color: #c3e6cb;
 }
 
+
+.status-PROGRESS,.status-PROGRESS:focus,.status-PROGRESS:disabled  { cursor:pointer; background-color: #5be753;}
+.status-PROCESSING,.status-PROCESSING:focus,.status-PROCESSING:disabled  { cursor:pointer; background-color: #189bdd;color: #fff;}
+.status-READY,.status-READY:focus,.status-READY:disabled  { cursor:pointer; background-color: #2abb4c; }
+.status-DELIVERY,.status-DELIVERY:focus,.status-DELIVERY:disabled  { cursor:pointer; background-color: orange; color:#fff }
+.status-CANCELED,.status-CANCELED:focus,.status-CANCELED:disabled  {  background-color: darkred; color: #fff;}
+.status-FINISHED,.status-FINISHED:focus,.status-FINISHED:disabled  {  background-color: rgb(5, 172, 5); }
+
+
 /* Simple sidebar */
 /*!
  * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/templates/simple-sidebar)
